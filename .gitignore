@@ -1,0 +1,7 @@
+# personal design-system reference bundle — not part of the published site
+Design_Language.html
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
