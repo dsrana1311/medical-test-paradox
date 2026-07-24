@@ -94,8 +94,7 @@ nav.steps button{
 nav.steps button .n{font-family:'Space Grotesk',sans-serif;font-weight:700}
 nav.steps button[data-state="done"]{color:var(--ink2)}
 nav.steps button[data-state="active"]{background:var(--ink);color:var(--bg)}
-nav.steps button:disabled{cursor:default;opacity:.55}
-nav.steps button[data-state="done"]:not(:disabled):hover{background:var(--panel2)}
+nav.steps button:not([data-state="active"]):hover{background:var(--panel2)}
 @media (max-width:1279.98px){ nav.steps button .lbl{display:none} nav.steps button[data-state="active"] .lbl{display:inline} }
 
 /* ── theme toggle ────────────────────────────────────────── */
@@ -1265,7 +1264,6 @@ function enter(i){
   for(var k=0;k<9;k++){
     scenes[k].classList.toggle('active',k===i);
     stepBtns[k].dataset.state = k===i?'active':(k<=st.maxScene?'done':'');
-    stepBtns[k].disabled = k>st.maxScene;
   }
   var chipOn = !!st.guess && i>=0 && i<=3;
   $('chip').classList.toggle('show', chipOn);
