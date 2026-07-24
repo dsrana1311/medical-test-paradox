@@ -126,6 +126,16 @@ ul.craft li{margin-bottom:.5rem;color:var(--ink2);font-size:.93rem;max-width:60c
 :root[data-theme="dark"] #themeToggle .ic-sun{display:block}
 :root[data-theme="dark"] #themeToggle .ic-moon{display:none}
 
+dialog.lightbox{border:0;padding:0;background:transparent;max-width:min(58rem,94vw);margin:auto;overflow:visible}
+dialog.lightbox::backdrop{background:rgba(16,21,31,.8)}
+.lightbox figure{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#FBF7EF}
+.lightbox img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;margin:0 auto}
+.lightbox figcaption{font:600 .76rem/1.55 'Manrope',sans-serif;color:var(--mut);padding:.55rem .85rem;border-top:1px solid var(--line);background:var(--panel)}
+.lightbox figcaption .n{display:inline-flex;align-items:center;justify-content:center;width:1.3rem;height:1.3rem;border-radius:50%;background:var(--accent-tint);color:var(--accent-press);font:700 .72rem/1 'Space Grotesk',sans-serif;margin-right:.45rem;vertical-align:-.3em}
+:root[data-theme="dark"] .lightbox figcaption .n{color:var(--accent)}
+.lightbox .lb-close{position:absolute;top:.55rem;right:.55rem;width:2.1rem;height:2.1rem;border-radius:50%;border:1px solid var(--line2);background:var(--panel);color:var(--ink);cursor:pointer;font:700 .95rem/1 'Space Grotesk',sans-serif;box-shadow:0 2px 8px rgba(16,21,31,.25)}
+.lightbox .lb-close:hover{background:var(--accent-tint);color:var(--accent-press)}
+
 footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);font:600 .74rem/1.7 'Manrope',sans-serif;color:var(--mut);max-width:38rem}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -196,7 +206,7 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
 </div>
 
 <h2 id="learner-testing">Tested on real people, what changed and why</h2>
-<p class="lede">I put the lesson in front of my friends and watched, without helping. Every change below traces to something they actually did on screen, froze, skipped, looped, disbelieved, not to a hunch about what might look better. In each screenshot, <strong style="color:var(--accent-press)">coral marks the thing that was added</strong>.</p>
+<p class="lede">I put the lesson in front of real learners and watched, without helping. Every change below traces to something a person actually did on screen, froze, skipped, looped, disbelieved, not to a hunch about what might look better. In each screenshot, <strong style="color:var(--accent-press)">coral marks the thing that was added</strong>.</p>
 
 <p class="round">Round 1 · watched live on desktop · July 2026</p>
 
@@ -213,40 +223,39 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
     <tr id="row-1">
       <td class="ltn"><span class="n">1</span></td>
       <td class="ltw"><span class="t">The first screen was a wall</span>The lesson opened cold — 1,000 dots, three stats and a question, all already there. Several testers visibly stalled before reading a word.</td>
-      <td>The town now pours in over about four seconds, and the single sick person lands last, with a ring. Same information, but it arrives as an event you watch instead of a wall you face. <a class="sl" href="#shot-1">shot ↓</a></td>
+      <td>The town now pours in over about four seconds, and the single sick person lands last, with a ring. Same information, but it arrives as an event you watch instead of a wall you face. <a class="sl" href="#shot-1">view shot</a></td>
     </tr>
     <tr id="row-2">
       <td class="ltn"><span class="n">2</span></td>
       <td class="ltw"><span class="t">The gut answer kept getting forgotten</span>By the time learners had built the town and run the test, some had quietly drifted off the number they committed to in Scene 1. When their own count said 9%, the disproof lost its sting.</td>
-      <td>The locked answer now rides in the top-right corner from the moment it's locked — once you've disproved yourself, its job is done. <a class="sl" href="#shot-2">shot ↓</a></td>
+      <td>The locked answer now rides in the top-right corner from the moment it's locked — once you've disproved yourself, its job is done. <a class="sl" href="#shot-2">view shot</a></td>
     </tr>
     <tr id="row-3">
       <td class="ltn"><span class="n">3</span></td>
       <td class="ltw"><span class="t">“99% accurate” refused to mean “10 false alarms”</span>Learners watched the sort produce 10 false alarms and didn't buy it. The pile read as a trick of the app, not a consequence of a number they already knew how to multiply.</td>
-      <td>The first press of “Test everyone” now stops and asks for one number first: of the 999 healthy people, how many get wrongly flagged? The pile stops being an assertion and becomes a payoff. <a class="sl" href="#shot-3">shot ↓</a></td>
+      <td>The first press of “Test everyone” now stops and asks for one number first: of the 999 healthy people, how many get wrongly flagged? The pile stops being an assertion and becomes a payoff. <a class="sl" href="#shot-3">view shot</a></td>
     </tr>
     <tr id="row-4">
       <td class="ltn"><span class="n">4</span></td>
       <td class="ltw"><span class="t">Scene 6 arrived all at once</span>After committing a prediction about the second test, the whole right panel appeared in one shot. The counting that justified it went unread.</td>
-      <td>The panel now unfolds in three parts, each rising in smoothly. Nothing appears that the learner didn't just ask for, so each number gets read in the order that explains it. <a class="sl" href="#shot-4">shot ↓</a></td>
+      <td>The panel now unfolds in three parts, each rising in smoothly. Nothing appears that the learner didn't just ask for, so each number gets read in the order that explains it. <a class="sl" href="#shot-4">view shot</a></td>
     </tr>
     <tr id="row-5">
       <td class="ltn"><span class="n">5</span></td>
       <td class="ltw"><span class="t">A wrong drag got a bounce but no reason</span>In the formula builder, dropping “10 false alarms” into the numerator just bounced. Some learners looped, same wrong placement again and again, feeling around for what the app wanted instead of thinking about the fraction.</td>
-      <td>Every wrong placement now answers with the reason it's wrong. <a class="sl" href="#shot-5">shot ↓</a></td>
+      <td>Every wrong placement now answers with the reason it's wrong. <a class="sl" href="#shot-5">view shot</a></td>
     </tr>
     <tr id="row-6">
       <td class="ltn"><span class="n">6</span></td>
       <td class="ltw"><span class="t">Nobody should be lost for more than eight seconds</span>A few testers stalled on a screen, unsure what was clickable.</td>
-      <td>After eight seconds without input, a pulsing halo and a one-line tip point at the one control that moves the lesson forward. <a class="sl" href="#shot-6">shot ↓</a></td>
+      <td>After eight seconds without input, a pulsing halo and a one-line tip point at the one control that moves the lesson forward. <a class="sl" href="#shot-6">view shot</a></td>
     </tr>
   </tbody>
 </table>
 </div>
 
-<p class="round">The evidence, shot by shot</p>
-
 <div class="shots">
+<p class="round">The evidence, shot by shot</p>
 <figure class="shot" id="shot-1">
   <img src="docs/lt-dots.png" alt="Three moments of the opening animation: a few dot rows at half a second, half the town at 1.5 seconds, and the full 1,000 with the single magenta sick dot ringed at 4 seconds." loading="lazy">
   <figcaption><span class="n">1</span>The new open, in three moments. <a class="sl" href="#row-1">back to row ↑</a></figcaption>
@@ -272,6 +281,43 @@ footer{margin-top:3.5rem;padding-top:1.2rem;border-top:1px solid var(--line);fon
   <figcaption><span class="n">6</span>Eight idle seconds on Scene 3: the halo lands on the one button that moves the lesson forward. <a class="sl" href="#row-6">back to row ↑</a></figcaption>
 </figure>
 </div>
+
+<dialog class="lightbox" id="shotbox" aria-label="Screenshot viewer">
+  <button class="lb-close" type="button" aria-label="Close screenshot">✕</button>
+  <figure>
+    <img alt="">
+    <figcaption class="lb-cap"></figcaption>
+  </figure>
+</dialog>
+
+<script>
+(function(){
+  var dlg=document.getElementById('shotbox');
+  if(!dlg||!dlg.showModal) return;
+  var shots=document.querySelector('.shots');
+  if(shots) shots.hidden=true;
+  var img=dlg.querySelector('img'), cap=dlg.querySelector('.lb-cap');
+  function open(fig){
+    var src=fig.querySelector('img');
+    if(!src) return;
+    img.src=src.src; img.alt=src.alt;
+    var fc=fig.querySelector('figcaption').cloneNode(true);
+    fc.querySelectorAll('a').forEach(function(a){ a.remove(); });
+    cap.innerHTML=fc.innerHTML;
+    dlg.showModal();
+  }
+  document.querySelectorAll('a.sl[href^="#shot-"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var fig=document.getElementById(a.getAttribute('href').slice(1));
+      if(!fig) return;
+      e.preventDefault();
+      open(fig);
+    });
+  });
+  dlg.addEventListener('click', function(e){ if(e.target===dlg) dlg.close(); });
+  dlg.querySelector('.lb-close').addEventListener('click', function(){ dlg.close(); });
+})();
+</script>
 
 <p>This section grows as more people play the lesson, each round of watching earns its own set of changes.</p>
 
